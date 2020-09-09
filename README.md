@@ -1,6 +1,7 @@
 # ToDo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+This project is hosted on https://matthewalunni.github.io/to-do-angular/
 
 ## Development server
 
