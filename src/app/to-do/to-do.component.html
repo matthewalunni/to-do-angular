@@ -1,0 +1,31 @@
+<div class="jumbotron" style="padding: 45px 0px;">
+    <h4 class="text-center">
+        To-Do List Application
+    </h4>
+</div>
+
+
+<div class="input-group mb-2 mr-sm-2">
+    <input type="text" class="form-control" id="addItem" placeholder="Click Plus to Add An Item" #itemTitle>
+    <div class="input-group-append">
+        <div class="input-group-text hover-cursor" style="padding: .0rem .25rem;" (click)="onAdd(itemTitle)">
+            <i class="fa fa-plus-circle fa-2x"></i>
+        </div>
+    </div>
+</div>
+
+<div class="list-group">
+    <div class="input-group mb-3" *ngFor="let item of toDoListArray">
+        <div class="input-group-prepend" style="cursor: pointer;" (click)="toggleChecked(item.$key, item.isChecked)">
+            <div class="input-group-text">
+                <i class='fa fa-lg' [ngClass]="item.isChecked?'fa-check-circle':'fa-circle-thin'"></i>
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with checkbox" value={{item.title}}>
+        <div class="input-group-append" style="cursor: pointer;" (click)="onDelete(item.$key)">
+            <div class="input-group-text">
+                <i class="fa fa-trash" style="color: red;"></i>
+            </div>
+        </div>
+    </div>
+</div>
